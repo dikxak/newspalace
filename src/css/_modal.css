@@ -1,0 +1,70 @@
+.share-popup-container {
+  background-color: #af3939;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1100;
+  border-radius: 1rem;
+  padding: 3.2rem 2.4rem;
+  color: #fff;
+
+  transition: all 0.35s;
+}
+
+.share-popup-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 6.4rem;
+}
+
+.share-popup-btns a:link,
+.share-popup-btns a:visited,
+.share-popup-btns button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 2rem;
+
+  cursor: pointer;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+}
+
+.share-popup-btns a:link svg,
+.share-popup-btns a:visited svg,
+.share-popup-btns button svg {
+  width: 5.2rem;
+  height: 5.2rem;
+  color: #fff;
+  stroke: #fff;
+  fill: #fff;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 1%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 3.6rem;
+  color: #fff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  transition: all 0.35s;
+}

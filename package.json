@@ -1,0 +1,19 @@
+{
+  "name": "newspalace",
+  "version": "1.0.0",
+  "description": "A place to get all the news from different sources",
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html"
+  },
+  "author": "Dikshak Poudel",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.3.2"
+  },
+  "dependencies": {
+    "core-js": "^3.21.1",
+    "javascript-time-ago": "^2.3.13",
+    "regenerator-runtime": "^0.13.9"
+  }
+}

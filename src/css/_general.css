@@ -1,0 +1,164 @@
+/*
+**************** 
+General Component 
+*****************
+*/
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  grid-template-areas:
+    'header header header'
+    'menu results results';
+
+  max-width: 130rem;
+  margin: 0 auto 4.8rem auto;
+}
+
+.secondary-heading {
+  font-size: 3.6rem;
+  align-self: flex-start;
+  margin-bottom: 3.2rem;
+  background-color: #fedcdc;
+
+  padding: 1.2rem 2.4rem;
+  width: 100%;
+  letter-spacing: -1.25px;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  text-transform: capitalize;
+}
+
+.tertiary-heading {
+  font-size: 3rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 4.8rem;
+}
+
+.secondary-heading svg {
+  width: 3.6rem;
+  height: 3.6rem;
+  color: #af3939;
+  stroke: #af3939;
+  fill: #af3939;
+}
+
+.btn {
+  display: inline-block;
+
+  font-family: inherit;
+  font-size: 1.6rem;
+
+  border: none;
+  cursor: pointer;
+  padding: 1.2rem 2.4rem;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.main-container {
+  grid-area: results;
+  padding: 2.4rem 0rem 6.4rem 1.6rem;
+  background-color: #fff;
+  position: relative;
+}
+
+.main-container .search-message {
+  height: 20rem;
+  background-color: #fff;
+}
+
+.search-message {
+  width: 100%;
+  height: 25rem;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  font-weight: 600;
+  background-color: #f4f4f4;
+  letter-spacing: -0.5px;
+}
+
+.search-message svg {
+  width: 6.4rem;
+  height: 6.4rem;
+  color: #af3939;
+  stroke: #af3939;
+  fill: #af3939;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 7.2rem;
+  height: 7.2rem;
+  animation: rotate 1.25s infinite linear;
+}
+
+.loading-spinner-small {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+
+  width: 4rem;
+  height: 4rem;
+
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: rotate 1.25s infinite linear;
+}
+
+.page-load {
+  opacity: 1;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 0rem 1.2rem;
+  margin-bottom: 2.4rem;
+}
+
+ol li {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+li .btn--news {
+  margin-top: 2.4rem;
+}
+
+/*
+    **************** 
+    Miscellenous
+    *****************
+    */
+.twitter-link:link,
+.twitter-link:visited {
+  color: #222;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}

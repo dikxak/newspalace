@@ -1,0 +1,54 @@
+/*
+**************** 
+Search History
+*****************
+*/
+.search-history-container {
+  position: relative;
+  height: 60rem;
+}
+
+.search-history {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.6rem;
+  row-gap: 4.8rem;
+
+  text-align: center;
+}
+
+.search-history-title {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  background-color: #fdbaba;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: transform 0.35s;
+}
+
+.search-history-title:hover {
+  transform: translateY(-2px);
+}
+
+.btn-clear {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  color: #fff;
+  font-size: 2rem;
+
+  border-radius: 0.8rem;
+  background-color: #af3939;
+  transition: transform 0.15s;
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.1);
+}
+
+.btn-clear:active {
+  transform: translateY(2px);
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+}

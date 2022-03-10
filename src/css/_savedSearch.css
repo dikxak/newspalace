@@ -1,0 +1,22 @@
+/*
+**************** 
+Styling Saved Search 
+*****************
+*/
+.saved-search {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.saved-search .news {
+  gap: 1.6rem;
+}
+
+.saved-news-img {
+  width: 100%;
+}
+
+.saved-search .news-title {
+  font-size: 2rem;
+}
