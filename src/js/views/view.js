@@ -121,7 +121,7 @@ export class View {
     title = title === '' ? SEARCH_HEADING : title;
     iconName = iconName === '' ? SEARCH_ICON : iconName;
 
-    const newMarkup = this.render(data,title,iconName);
+    const newMarkup = this.render(data, title, iconName);
 
     // Creating virtual element in the memory
     const newDom = document.createRange().createContextualFragment(newMarkup);
