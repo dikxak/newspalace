@@ -38,7 +38,7 @@ const controlNewsResults = async function () {
     await model.loadNewsResults(query);
 
     // render the data to the view
-    view.renderHandler(model.getSearchResultsData());
+    view.render(model.getSearchResultsData());
   } catch (err) {
     console.error(err);
     view.renderError();
@@ -54,7 +54,7 @@ const controlSearchHistory = async function (element) {
   }
 
   if (element && model.appData.search.queries.length) {
-    searchHistoryView.renderHandler(
+    searchHistoryView.render(
       model.appData.search.queries,
       element.dataset.title,
       element.dataset.iconName
@@ -102,7 +102,7 @@ const controlCategoryResults = async function (targetElement) {
       targetElement.dataset.iconName
     );
 
-    view.renderHandler(
+    view.render(
       model.getSearchResultsData(),
       model.appData.category.title,
       model.appData.category.iconName
@@ -131,7 +131,7 @@ const controlLocalNewsResults = async function (targetElement) {
     );
 
     // "render" the data to the view
-    view.renderHandler(
+    view.render(
       model.getSearchResultsData(),
       targetElement.dataset.title,
       targetElement.dataset.icon
@@ -179,7 +179,7 @@ const controlBookmarks = async function (element) {
   await simulateLoading(0.25);
 
   if (model.appData.bookmarks.length) {
-    bookmarksView.renderHandler(
+    bookmarksView.render(
       model.appData.bookmarks,
       element.dataset.title,
       element.dataset.iconName

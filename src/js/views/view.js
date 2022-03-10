@@ -22,7 +22,7 @@ export class View {
   _errorMessage = 'Oops! Something went wrong, please try again...';
   _errorIconName = 'icon-alert-circle';
 
-  renderHandler(
+  render(
     data,
     headingTitle = SEARCH_HEADING,
     headingIconName = SEARCH_ICON
