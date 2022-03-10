@@ -553,7 +553,7 @@ const controlNewsResults = async function() {
         // await until the data is loaded.
         await _modelJs.loadNewsResults(query);
         // render the data to the view
-        _viewJsDefault.default.renderHandler(_modelJs.getSearchResultsData());
+        _viewJsDefault.default.render(_modelJs.getSearchResultsData());
     } catch (err) {
         console.error(err);
         _viewJsDefault.default.renderError();
@@ -563,7 +563,7 @@ const controlSearchHistory = async function(element) {
     _searchHistoryViewDefault.default.renderSpinner();
     await _generalJs.simulateLoading(0.25);
     if (element && !_modelJs.appData.search.queries.length) _searchHistoryViewDefault.default.renderError();
-    if (element && _modelJs.appData.search.queries.length) _searchHistoryViewDefault.default.renderHandler(_modelJs.appData.search.queries, element.dataset.title, element.dataset.iconName);
+    if (element && _modelJs.appData.search.queries.length) _searchHistoryViewDefault.default.render(_modelJs.appData.search.queries, element.dataset.title, element.dataset.iconName);
 };
 const controlClearHistory = function(element) {
     _modelJs.clearSearchQueries();
@@ -588,7 +588,7 @@ const controlCategoryResults = async function(targetElement) {
     try {
         _viewJsDefault.default.renderSpinner();
         await _modelJs.loadCategoryResults(targetElement.dataset.category, targetElement.dataset.iconName);
-        _viewJsDefault.default.renderHandler(_modelJs.getSearchResultsData(), _modelJs.appData.category.title, _modelJs.appData.category.iconName);
+        _viewJsDefault.default.render(_modelJs.getSearchResultsData(), _modelJs.appData.category.title, _modelJs.appData.category.iconName);
     } catch (err) {
         _viewJsDefault.default.renderError();
     }
@@ -603,7 +603,7 @@ const controlLocalNewsResults = async function(targetElement) {
         // "await" until the data is loaded.
         await _modelJs.loadNewsResults(country, targetElement.dataset.title, targetElement.dataset.icon);
         // "render" the data to the view
-        _viewJsDefault.default.renderHandler(_modelJs.getSearchResultsData(), targetElement.dataset.title, targetElement.dataset.icon);
+        _viewJsDefault.default.render(_modelJs.getSearchResultsData(), targetElement.dataset.title, targetElement.dataset.icon);
     } catch (err) {
         console.error(err);
         _viewJsDefault.default.renderError();
@@ -627,7 +627,7 @@ const controlBtnBookmark = function(element) {
 const controlBookmarks = async function(element) {
     _bookmarksViewJsDefault.default.renderSpinner();
     await _generalJs.simulateLoading(0.25);
-    if (_modelJs.appData.bookmarks.length) _bookmarksViewJsDefault.default.renderHandler(_modelJs.appData.bookmarks, element.dataset.title, element.dataset.iconName);
+    if (_modelJs.appData.bookmarks.length) _bookmarksViewJsDefault.default.render(_modelJs.appData.bookmarks, element.dataset.title, element.dataset.iconName);
     else _bookmarksViewJsDefault.default.renderError();
 };
 const controlPageLoad = function() {
@@ -2622,7 +2622,8 @@ init();
 },{"./config.js":"k5Hzs","./general.js":"1FZwQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lcoJh":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-class NewsShareView {
+var _viewJs = require("./view.js");
+class NewsShareView extends _viewJs.View {
     _parentElement = document.querySelector('.share-popup-container');
     _btnOpenModal = document.querySelector('.main-container');
     _overlay = document.querySelector('.overlay');
@@ -2630,6 +2631,7 @@ class NewsShareView {
     _shareURL = '';
     _shareText = '';
     constructor(){
+        super();
         this._showModalHandler();
         this._closeModalHandler();
         this._socialShareHandler();
@@ -2685,45 +2687,7 @@ class NewsShareView {
 }
 exports.default = new NewsShareView();
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"f0r3R":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-class NewsSearchView {
-    _parentElement = document.querySelector('.search-form');
-    getQuery() {
-        const query = this._parentElement.querySelector('.search-field').value;
-        this._clearInputFields();
-        return query;
-    }
-    _clearInputFields() {
-        this._parentElement.querySelector('.search-field').value = '';
-    }
-    submitHandler(controlHandler) {
-        this._parentElement.addEventListener('submit', function(e) {
-            e.preventDefault();
-            controlHandler();
-        });
-    }
-}
-exports.default = new NewsSearchView();
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6LDKs":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _viewJs = require("./view.js");
-class NewsCategoryView extends _viewJs.View {
-    _containerElement = document.querySelector('.menu-app');
-    categoryClickHandler(handler) {
-        this._containerElement.addEventListener('click', function(e) {
-            const targetElement = e.target.closest('.menu-link');
-            if (!targetElement) return;
-            handler(targetElement);
-        });
-    }
-}
-exports.default = new NewsCategoryView();
-
-},{"./view.js":"bWlJ9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bWlJ9":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./view.js":"bWlJ9"}],"bWlJ9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "View", ()=>View
@@ -2750,7 +2714,7 @@ class View {
     _additionalElement = '';
     _errorMessage = 'Oops! Something went wrong, please try again...';
     _errorIconName = 'icon-alert-circle';
-    renderHandler(data, headingTitle = _config.SEARCH_HEADING, headingIconName = _config.SEARCH_ICON) {
+    render(data, headingTitle = _config.SEARCH_HEADING, headingIconName = _config.SEARCH_ICON) {
         const markup = `
         <div class="${this._containerClassName1}">
             <h2 class="secondary-heading">
@@ -2828,7 +2792,7 @@ class View {
     update(data, title, iconName) {
         title = title === '' ? _config.SEARCH_HEADING : title;
         iconName = iconName === '' ? _config.SEARCH_ICON : iconName;
-        const newMarkup = this.renderHandler(data, title, iconName);
+        const newMarkup = this.render(data, title, iconName);
         // Creating virtual element in the memory
         const newDom = document.createRange().createContextualFragment(newMarkup);
         // Selecting all the elements from the selected DOM
@@ -5835,7 +5799,45 @@ module.exports = require('./helpers/bundle-url').getBundleURL('hWUTQ') + "icons.
 },{"./helpers/bundle-url":"lgJ39"}],"hZEc4":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('hWUTQ') + "loading_spinner_small.444a601c.svg" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"54ci3":[function(require,module,exports) {
+},{"./helpers/bundle-url":"lgJ39"}],"f0r3R":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+class NewsSearchView {
+    _parentElement = document.querySelector('.search-form');
+    getQuery() {
+        const query = this._parentElement.querySelector('.search-field').value;
+        this._clearInputFields();
+        return query;
+    }
+    _clearInputFields() {
+        this._parentElement.querySelector('.search-field').value = '';
+    }
+    submitHandler(controlHandler) {
+        this._parentElement.addEventListener('submit', function(e) {
+            e.preventDefault();
+            controlHandler();
+        });
+    }
+}
+exports.default = new NewsSearchView();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6LDKs":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _viewJs = require("./view.js");
+class NewsCategoryView extends _viewJs.View {
+    _containerElement = document.querySelector('.menu-app');
+    categoryClickHandler(handler) {
+        this._containerElement.addEventListener('click', function(e) {
+            const targetElement = e.target.closest('.menu-link');
+            if (!targetElement) return;
+            handler(targetElement);
+        });
+    }
+}
+exports.default = new NewsCategoryView();
+
+},{"./view.js":"bWlJ9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"54ci3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _viewJs = require("./view.js");

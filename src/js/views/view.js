@@ -121,7 +121,7 @@ export class View {
     title = title === '' ? SEARCH_HEADING : title;
     iconName = iconName === '' ? SEARCH_ICON : iconName;
 
-    const newMarkup = this.renderHandler(data, title, iconName);
+    const newMarkup = this.render(data,title,iconName);
 
     // Creating virtual element in the memory
     const newDom = document.createRange().createContextualFragment(newMarkup);
@@ -193,8 +193,8 @@ export class View {
                   ${article.source.name}
                 </span>
                 <span class="news-time">${timeAgo.format(
-                  new Date(article.publishedAt)
-                )}
+          new Date(article.publishedAt)
+        )}
                 </span>
               </div>
 
@@ -206,9 +206,8 @@ export class View {
                   <button class="btn btn--news btn--save">
                     <svg>
                       <use href="
-                        ${icons}#${
-          article.bookmarked ? 'icon-bookmark' : 'icon-bookmark-outline'
-        }">
+                        ${icons}#${article.bookmarked ? 'icon-bookmark' : 'icon-bookmark-outline'
+          }">
                       </use>
                     </svg>
                   </button>

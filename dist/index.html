@@ -304,14 +304,14 @@
     <div class="overlay hidden"></div>
 
     <script>// Embedded script to load the initial layout.
-const menu = document.querySelector(".menu-container");
-const header = document.querySelector(".header");
-const container = document.querySelector(".container");
-const mainContainer = document.querySelector(".main-container");
-menu.style.position = "fixed";
+const menu = document.querySelector('.menu-container');
+const header = document.querySelector('.header');
+const container = document.querySelector('.container');
+const mainContainer = document.querySelector('.main-container');
+menu.style.position = 'fixed';
 menu.style.transform = `translateY(${getComputedStyle(header).height})`;
 menu.style.width = `${+getComputedStyle(container).width.slice(0, -2) / 3.75}px`;
-menu.style.height = "70rem";
+menu.style.height = '70rem';
 mainContainer.style.transform = `translateY(${getComputedStyle(header).height})`;
 header.style.width = `${getComputedStyle(container).width}`;
 

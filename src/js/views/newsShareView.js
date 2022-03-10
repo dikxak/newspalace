@@ -1,4 +1,6 @@
-class NewsShareView {
+import { View } from './view.js';
+
+class NewsShareView extends View {
   _parentElement = document.querySelector('.share-popup-container');
   _btnOpenModal = document.querySelector('.main-container');
   _overlay = document.querySelector('.overlay');
@@ -8,6 +10,7 @@ class NewsShareView {
   _shareText = '';
 
   constructor() {
+    super();
     this._showModalHandler();
     this._closeModalHandler();
     this._socialShareHandler();
