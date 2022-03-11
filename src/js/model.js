@@ -21,7 +21,12 @@ const appData = {
   bookmarks: [],
 };
 
-// "async" function returns promise.
+/**
+ * Loads news article data from newsapi's API
+ * @param {string} query - Query from the user's search 
+ * @param {string} category - News category name from the corresponding anchor
+ * @param {string} icon - Corresponding heading icon for the category
+ */
 const loadNewsResults = async function (query, category = '', icon = '') {
   appData.category.title = category;
   appData.category.iconName = icon;

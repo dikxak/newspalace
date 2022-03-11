@@ -634,6 +634,7 @@ const controlPageLoad = function() {
     window.location.hash = '';
 };
 const initController = function() {
+    _generalJs.addActiveLinkClass();
     _viewJsDefault.default.newsResultsScrollHandler(controlNewsScroll);
     _viewJsDefault.default.bookmarkClickHandler(controlBtnBookmark);
     _viewJsDefault.default.pageLoadHandler(controlPageLoad);
@@ -642,7 +643,6 @@ const initController = function() {
     _topHeadlinesViewJsDefault.default.topHeadlinesClickHandler(controlCategoryResults);
     _searchHistoryViewDefault.default.searchHistoryClickHandler(controlSearchHistory);
     _searchHistoryViewDefault.default.clearSearchHistoryClickHandler(controlClearHistory);
-    _generalJs.addActiveLinkClass();
     _localNewsViewDefault.default.localNewsClickHandler(controlLocalNewsResults);
     _bookmarksViewJsDefault.default.bookmarkClickHandler(controlBookmarks);
 };
@@ -2485,8 +2485,12 @@ const appData = {
     },
     bookmarks: []
 };
-// "async" function returns promise.
-const loadNewsResults = async function(query, category = '', icon = '') {
+/**
+ * Loads news article data from newsapi's API
+ * @param {string} query | Query from the user's search 
+ * @param {string} category | News category name from the corresponding anchor
+ * @param {string} icon | Corresponding heading icon for the category
+ */ const loadNewsResults = async function(query, category = '', icon = '') {
     appData.category.title = category;
     appData.category.iconName = icon;
     // Initial promise value
@@ -2714,7 +2718,13 @@ class View {
     _additionalElement = '';
     _errorMessage = 'Oops! Something went wrong, please try again...';
     _errorIconName = 'icon-alert-circle';
-    render(data, headingTitle = _config.SEARCH_HEADING, headingIconName = _config.SEARCH_ICON) {
+    /**
+   * Renders generated markup to the corresponding view
+   * @param {array} data - Articles from the news API stored in array
+   * @param {string} headingTitle - Title for the heading in rendered page
+   * @param {string} headingIconName - Icon name for the page heading
+   * @returns {string} - HTML markup 
+   * */ render(data, headingTitle = _config.SEARCH_HEADING, headingIconName = _config.SEARCH_ICON) {
         const markup = `
         <div class="${this._containerClassName1}">
             <h2 class="secondary-heading">
@@ -2764,8 +2774,10 @@ class View {
         this._clearContainer();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
     }
-    // Function to append the news results after scroll(event) to the bottom
-    appendNewsResults(data) {
+    /**
+   * Appends the news results after scroll event to the bottom of the page
+   * @param {array} data | Articles from the API according to page number
+   */ appendNewsResults(data) {
         this._newsContainer.insertAdjacentHTML('beforeend', this._createMarkup(data));
     }
     newsResultsScrollHandler(handler) {
@@ -2789,7 +2801,12 @@ class View {
             handler(targetElement);
         });
     }
-    update(data, title, iconName) {
+    /**
+   * Updates the view where news is bookmarked 
+   * @param {array} data - Articles from the news API stored in array
+   * @param {string} title - Title for the heading in rendered page
+   * @param {string} iconName - Icon name for the page heading
+   * */ update(data, title, iconName) {
         title = title === '' ? _config.SEARCH_HEADING : title;
         iconName = iconName === '' ? _config.SEARCH_ICON : iconName;
         const newMarkup = this.render(data, title, iconName);
@@ -2828,8 +2845,11 @@ class View {
     _checkDescription(description) {
         return description && description.includes('/a>') || description && description.includes('h2') || description && description.includes('img') || description && description.includes('/span>') ? '' : description;
     }
-    // Function to create the markup for news results
-    _createMarkup = (data)=>{
+    /**
+   * Creates the markup for news results (is called by render() method)
+   * @param {array} data - Articles news data from API 
+   * @returns {string} - HTML Markup
+   */ _createMarkup = (data)=>{
         const timeAgo = new _javascriptTimeAgoDefault.default('en-US');
         return `${data.map((article)=>{
             return `

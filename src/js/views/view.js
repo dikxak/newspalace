@@ -22,6 +22,13 @@ export class View {
   _errorMessage = 'Oops! Something went wrong, please try again...';
   _errorIconName = 'icon-alert-circle';
 
+  /**
+   * Renders generated markup to the corresponding view
+   * @param {array} data - Articles from the news API stored in array
+   * @param {string} headingTitle - Title for the heading in rendered page
+   * @param {string} headingIconName - Icon name for the page heading
+   * @returns {string} - HTML markup 
+   * */
   render(
     data,
     headingTitle = SEARCH_HEADING,
@@ -57,7 +64,7 @@ export class View {
     return markup;
   }
 
-  // Function to load spinner after search or load
+  // Function to load spinner while loading data from API
   renderSpinner() {
     const markup = `
     <div class="loading-spinner">
@@ -85,7 +92,10 @@ export class View {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
-  // Function to append the news results after scroll(event) to the bottom
+  /**
+   * Appends the news results after scroll event to the bottom of the page
+   * @param {array} data | Articles from the API according to page number
+   */
   appendNewsResults(data) {
     this._newsContainer.insertAdjacentHTML(
       'beforeend',
@@ -117,6 +127,12 @@ export class View {
     });
   }
 
+  /**
+   * Updates the view when news is bookmarked 
+   * @param {array} data - Articles from the news API stored in array
+   * @param {string} title - Title for the heading in rendered page
+   * @param {string} iconName - Icon name for the page heading
+   * */
   update(data, title, iconName) {
     title = title === '' ? SEARCH_HEADING : title;
     iconName = iconName === '' ? SEARCH_ICON : iconName;
@@ -173,7 +189,11 @@ export class View {
       : description;
   }
 
-  // Function to create the markup for news results
+  /**
+   * Creates the markup for news results (is called by render() method)
+   * @param {array} data - Articles news data from API 
+   * @returns {string} - HTML Markup
+   */
   _createMarkup = data => {
     const timeAgo = new TimeAgo('en-US');
 
