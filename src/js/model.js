@@ -32,7 +32,7 @@ const loadNewsResults = async function (query, category = '', icon = '') {
   appData.category.iconName = icon;
 
   // Initial promise value
-  let newsData = new Promise(function (_, _) {});
+  let newsData = '';
 
   // Initializing pageNum for slicing array after user inputs query.
   appData.search.pageNum = 0;
@@ -75,7 +75,7 @@ const loadCategoryResults = async function (category, icon) {
   appData.category.title = category;
   appData.category.iconName = icon;
 
-  let newsData = new Promise(function (_, _) {});
+  let newsData = '';
 
   // Initializing pageNum for slicing array after user inputs query.
   appData.search.pageNum = 0;

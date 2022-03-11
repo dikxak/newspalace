@@ -2487,15 +2487,14 @@ const appData = {
 };
 /**
  * Loads news article data from newsapi's API
- * @param {string} query | Query from the user's search 
- * @param {string} category | News category name from the corresponding anchor
- * @param {string} icon | Corresponding heading icon for the category
+ * @param {string} query - Query from the user's search 
+ * @param {string} category - News category name from the corresponding anchor
+ * @param {string} icon - Corresponding heading icon for the category
  */ const loadNewsResults = async function(query, category = '', icon = '') {
     appData.category.title = category;
     appData.category.iconName = icon;
     // Initial promise value
-    let newsData = new Promise(function(_, _) {
-    });
+    let newsData = '';
     // Initializing pageNum for slicing array after user inputs query.
     appData.search.pageNum = 0;
     // Getting data from the API (either query or domain)
@@ -2528,8 +2527,7 @@ const saveHistory = function(query, title = '', iconName = '') {
 const loadCategoryResults = async function(category, icon) {
     appData.category.title = category;
     appData.category.iconName = icon;
-    let newsData = new Promise(function(_, _) {
-    });
+    let newsData = '';
     // Initializing pageNum for slicing array after user inputs query.
     appData.search.pageNum = 0;
     try {
@@ -2691,7 +2689,7 @@ class NewsShareView extends _viewJs.View {
 }
 exports.default = new NewsShareView();
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./view.js":"bWlJ9"}],"bWlJ9":[function(require,module,exports) {
+},{"./view.js":"bWlJ9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bWlJ9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "View", ()=>View
@@ -2750,7 +2748,7 @@ class View {
         // Needed the markup for update()
         return markup;
     }
-    // Function to load spinner after search or load
+    // Function to load spinner while loading data from API
     renderSpinner() {
         const markup = `
     <div class="loading-spinner">
@@ -2802,7 +2800,7 @@ class View {
         });
     }
     /**
-   * Updates the view where news is bookmarked 
+   * Updates the view when news is bookmarked 
    * @param {array} data - Articles from the news API stored in array
    * @param {string} title - Title for the heading in rendered page
    * @param {string} iconName - Icon name for the page heading

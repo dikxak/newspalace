@@ -1,10 +1,12 @@
 {
   "name": "newspalace",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "version": "1.0.0",
   "description": "A place to get all the news from different sources",
+  "default": "index.html",
   "scripts": {
     "start":"parcel index.html",
-    "build":"parcel build index.html"
+    "build":"parcel build index.html --dist-dir ./dist"
   },
   "author": "Dikshak Poudel",
   "license": "ISC",
