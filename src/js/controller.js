@@ -194,6 +194,7 @@ const controlPageLoad = function () {
 };
 
 const initController = function () {
+  addActiveLinkClass();
   view.newsResultsScrollHandler(controlNewsScroll);
   view.bookmarkClickHandler(controlBtnBookmark);
   view.pageLoadHandler(controlPageLoad);
@@ -202,7 +203,6 @@ const initController = function () {
   topHeadlinesView.topHeadlinesClickHandler(controlCategoryResults);
   searchHistoryView.searchHistoryClickHandler(controlSearchHistory);
   searchHistoryView.clearSearchHistoryClickHandler(controlClearHistory);
-  addActiveLinkClass();
   localNewsView.localNewsClickHandler(controlLocalNewsResults);
   bookmarksView.bookmarkClickHandler(controlBookmarks);
 };
