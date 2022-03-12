@@ -40,7 +40,6 @@ const controlNewsResults = async function () {
     // render the data to the view
     view.render(model.getSearchResultsData());
   } catch (err) {
-    console.error(err);
     view.renderError();
   }
 };
@@ -137,7 +136,6 @@ const controlLocalNewsResults = async function (targetElement) {
       targetElement.dataset.icon
     );
   } catch (err) {
-    console.error(err);
     view.renderError();
   }
 };

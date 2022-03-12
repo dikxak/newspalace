@@ -52,7 +52,6 @@ const loadNewsResults = async function (query, category = '', icon = '') {
 
     setLocalStorage();
   } catch (err) {
-    console.error(`💥💥 ${err}`);
     throw err;
   }
 };
@@ -92,7 +91,6 @@ const loadCategoryResults = async function (category, icon) {
 
     setLocalStorage();
   } catch (err) {
-    console.error(`💥💥 ${err}`);
     throw err;
   }
 };
@@ -132,9 +130,6 @@ const getSearchResultsDataBookmark = function () {
   const startIndex = 0;
 
   const endIndex = RESULTS_PER_PAGE * appData.search.pageNum;
-
-  console.log(appData.search.pageNum);
-  console.log(startIndex, endIndex);
 
   checkIsBookmarked();
 
