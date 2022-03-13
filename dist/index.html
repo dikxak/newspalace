@@ -1,1 +1,321 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/icon.610244fc.png"><link rel="stylesheet" href="/index.20a2dde5.css"><script type="module" src="/index.310a2391.js"></script><script src="/index.62d41a39.js" nomodule="" defer></script><title>NewsPalace &mdash; The melting pot of news</title></head><body> <div class="container"> <header class="header"> <img src="/logo.b0691a50.png" alt="News Palace Logo" class="logo"> <form class="search-form"> <input type="search" class="search-field" placeholder="Search news by topics, sources & countries"> <button class="btn btn--search"> <svg><use href="/icons.65650c0d.svg#icon-search"/></svg> Search News </button> </form> <nav class="nav"> <ul class="nav-list"> <li class="nav-item"> <button class="btn nav-btn nav-btn--local-news" data-title="local news" data-icon="icon-location"> <svg><use href="/icons.65650c0d.svg#icon-location"/></svg> Your local news </button> </li> </ul> </nav> </header> <div class="menu-container" role="menu"> <div class="menu"> <div class="menu-user"> <ul class="menu-link-list"> <li class="menu-link-item"> <a href="#topstories" class="menu-link" data-category="top stories" data-icon-name="icon-earth"><svg class="menu-icon"><use href="/icons.65650c0d.svg#icon-earth"/></svg> Top stories</a> </li> <li class="menu-link-item"> <a href="#savedsearches" class="menu-link" data-title="saved searches" data-icon-name="icon-search"><svg class="menu-icon"><use href="/icons.65650c0d.svg#icon-search"/></svg> Saved searches</a> </li> <li class="menu-link-item"> <a href="#searchhistory" class="menu-link" data-title="history" data-icon-name="icon-time"><svg class="menu-icon"><use href="/icons.65650c0d.svg#icon-time"/></svg> Search history</a> </li> </ul> </div> <div class="menu-app"> <ul class="menu-link-list"> <li class="menu-link-item"> <a href="#business" class="menu-link" data-category="business" data-icon-name="icon-stats-chart"> <svg class="menu-icon"><use href="/icons.65650c0d.svg#icon-stats-chart"/></svg> Business</a> </li> <li class="menu-link-item"> <a href="#technology" class="menu-link" data-category="technology" data-icon-name="icon-server"><svg class="menu-icon"><use href="/icons.65650c0d.svg#icon-server"/></svg> Technology</a> </li> <li class="menu-link-item"> <a href="#entertainment" class="menu-link" data-category="entertainment" data-icon-name="icon-film"><svg class="menu-icon"><use href="/icons.65650c0d.svg#icon-film"/></svg> Entertainment</a> </li> <li class="menu-link-item"> <a href="#health" class="menu-link" data-category="health" data-icon-name="icon-medkit"><svg class="menu-icon"><use href="/icons.65650c0d.svg#icon-medkit"/></svg> Health</a> </li> <li class="menu-link-item"> <a href="#sports" class="menu-link" data-category="sports" data-icon-name="icon-football"><svg class="menu-icon"><use href="/icons.65650c0d.svg#icon-football"/></svg> Sports</a> </li> </ul> </div> <p class="copyright"> Copyright &copy; 2022 by <a href="https://twitter.com/poudel_dikshak" class="twitter-link" target="_blank">Dikshak Poudel</a>. Designed and developed with <span class="heart">❤</span> in Kathmandu, Nepal. </p> </div> </div> <main class="main-container">  <p class="search-message"> <svg class="menu-icon"><use href="/icons.65650c0d.svg#icon-happy-face"/></svg> Search news to get started... </p>      <div style="display:none" class="news-container">   <div class="news"> <div class="news-content">     </div>  </div> </div>   <div style="display:none" class="saved-searches-container">  <div class="hidden saved-search"> <div class="news"> <div class="news-content"> <h2 class="news-title"> <a href="#">Paramount+ hits 32.8 million subscribers; will offer Showtime for a fee</a> </h2> <div class="news-info"> <span class="news-source">Engadget</span>  <span class="news-time">Feb 22 2022</span> </div> <div class="news-menu"> <button class="btn btn--news btn--save"> <svg class="menu-icon"><use href="/icons.65650c0d.svg#icon-bookmark"/></svg> </button> <button class="btn btn--news btn--share"> <svg class="menu-icon"><use href="/icons.65650c0d.svg#icon-share-social"/></svg> </button> </div> </div> <img src="https://s.yimg.com/os/creatr-uploaded-images/2022-02/6a168e00-8ec4-11ec-bffb-5830d9cd5237" "="" alt="Alternate text" class="saved-news-img"> </div> </div>  </div>     <svg class="loading-spinner-small"><use href="/loading_spinner_small.40d35e32.svg#loading-spinner"/></svg> </main> </div>  <div class="hidden share-popup-container"> <h3 class="tertiary-heading">Share this news on:</h3> <button class="close">&times;</button> <div class="share-popup-btns"> <button class="copy social-icon"> <svg><use href="/icons.65650c0d.svg#icon-link"/></svg> Copy Link </button> <a href="" target="_blank" class="social-icon twitter"><svg><use href="/icons.65650c0d.svg#icon-twitter"/></svg> Twitter </a> <a href="" target="_blank" class="social-icon whatsapp"><svg><use href="/icons.65650c0d.svg#icon-whatsapp"/></svg> Whatsapp </a> <a href="" target="_blank" class="social-icon telegram"><svg><use href="/icons.65650c0d.svg#icon-telegram"/></svg> Telegram </a> </div> </div> <div class="hidden overlay"></div> <script>var menu=document.querySelector(".menu-container"),header=document.querySelector(".header"),container=document.querySelector(".container"),mainContainer=document.querySelector(".main-container");menu.style.position="fixed",menu.style.transform="translateY(".concat(getComputedStyle(header).height,")"),menu.style.width="".concat(+getComputedStyle(container).width.slice(0,-2)/3.75,"px"),menu.style.height="70rem",mainContainer.style.transform="translateY(".concat(getComputedStyle(header).height,")"),header.style.width="".concat(getComputedStyle(container).width);</script> </body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="/icon.323200e9.png">
+    <link rel="stylesheet" href="/index.34df27b5.css">
+    <script src="/index.e37f48ea.js" defer=""></script>
+
+    <title>NewsPalace &mdash; The melting pot of news</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="/logo.726d37a8.png" alt="News Palace Logo" class="logo">
+        <form class="search-form">
+          <input type="search" class="search-field" placeholder="Search news by topics, sources & countries">
+          <button class="btn btn--search">
+            <svg>
+              <use href="/icons.21bad73c.svg#icon-search"></use>
+            </svg>
+            Search News
+          </button>
+        </form>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <button class="btn nav-btn nav-btn--local-news" data-title="local news" data-icon="icon-location">
+                <svg>
+                  <use href="/icons.21bad73c.svg#icon-location"></use>
+                </svg>
+                Your local news
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="menu-container" role="menu">
+        <div class="menu">
+          <div class="menu-user">
+            <ul class="menu-link-list">
+              <li class="menu-link-item">
+                <a href="#topstories" class="menu-link" data-category="top stories" data-icon-name="icon-earth"><svg class="menu-icon">
+                    <use href="/icons.21bad73c.svg#icon-earth"></use>
+                  </svg>
+                  Top stories</a>
+              </li>
+
+              <li class="menu-link-item">
+                <a href="#savedsearches" class="menu-link" data-title="saved searches" data-icon-name="icon-search"><svg class="menu-icon">
+                    <use href="/icons.21bad73c.svg#icon-search"></use>
+                  </svg>
+                  Saved searches</a>
+              </li>
+
+              <li class="menu-link-item">
+                <a href="#searchhistory" class="menu-link" data-title="history" data-icon-name="icon-time"><svg class="menu-icon">
+                    <use href="/icons.21bad73c.svg#icon-time"></use>
+                  </svg>
+                  Search history</a>
+              </li>
+            </ul>
+          </div>
+          <div class="menu-app">
+            <ul class="menu-link-list">
+              <li class="menu-link-item">
+                <a href="#business" class="menu-link" data-category="business" data-icon-name="icon-stats-chart">
+                  <svg class="menu-icon">
+                    <use href="/icons.21bad73c.svg#icon-stats-chart"></use>
+                  </svg>
+                  Business</a>
+              </li>
+
+              <li class="menu-link-item">
+                <a href="#technology" class="menu-link" data-category="technology" data-icon-name="icon-server"><svg class="menu-icon">
+                    <use href="/icons.21bad73c.svg#icon-server"></use>
+                  </svg>
+                  Technology</a>
+              </li>
+
+              <li class="menu-link-item">
+                <a href="#entertainment" class="menu-link" data-category="entertainment" data-icon-name="icon-film"><svg class="menu-icon">
+                    <use href="/icons.21bad73c.svg#icon-film"></use>
+                  </svg>
+                  Entertainment</a>
+              </li>
+
+              <li class="menu-link-item">
+                <a href="#health" class="menu-link" data-category="health" data-icon-name="icon-medkit"><svg class="menu-icon">
+                    <use href="/icons.21bad73c.svg#icon-medkit"></use>
+                  </svg>
+                  Health</a>
+              </li>
+
+              <li class="menu-link-item">
+                <a href="#sports" class="menu-link" data-category="sports" data-icon-name="icon-football"><svg class="menu-icon">
+                    <use href="/icons.21bad73c.svg#icon-football"></use>
+                  </svg>
+                  Sports</a>
+              </li>
+            </ul>
+          </div>
+          <p class="copyright">
+            Copyright &copy; 2022 by
+            <a href="https://twitter.com/poudel_dikshak" class="twitter-link" target="_blank">Dikshak Poudel</a>. Designed and developed with <span class="heart">❤</span>
+            in Kathmandu, Nepal.
+          </p>
+        </div>
+      </div>
+
+      <main class="main-container">
+        <!-- Search Message (init) -->
+        <p class="search-message">
+          <svg class="menu-icon">
+            <use href="/icons.21bad73c.svg#icon-happy-face"></use>
+          </svg>
+          Please see readme on the github repository to run the project...
+          <a href="https://github.com/dikxak/newspalace" class="github-repo-link" target="_blank">Go to project repo</a>
+        </p>
+
+        <!-- Search Error Message -->
+        <!-- <p style="display: none" class="search-message">
+          <svg class="menu-icon">
+            <use href="./src/img/icons.svg#icon-alert-circle"></use>
+          </svg>
+          Oops! Something went wrong, please try again...
+        </p> -->
+
+        <!-- Loading Spinner -->
+        <!-- <div class="loading-spinner hidden">
+          <svg>
+            <use href="./src/img/loading_spinner.svg#loading-spinner"></use>
+          </svg>
+        </div> -->
+
+        <!-- News Start -->
+        <div style="display: none" class="news-container">
+          <!-- Use data-name for dynamic icon and data-head in the corresponding element for heading-->
+          <!-- <h2 class="secondary-heading">
+            <svg class="menu-icon">
+              <use href="./src/img/icons.svg#icon-earth"></use>
+            </svg>
+            Top Stories
+          </h2> -->
+
+          <div class="news">
+            <div class="news-content">
+              <!-- <h2 class="news-title">
+                <a href="#"
+                  >Paramount+ hits 32.8 million subscribers; will offer Showtime
+                  for a fee</a
+                >
+              </h2> -->
+
+              <!-- <div class="news-info">
+                <span class="news-source">Engadget</span>
+                <span class="news-time">4 hours ago</span>
+              </div> -->
+
+              <!-- <p class="news-description">
+                A lot is changing at ViacomCBS — which changed its name today to
+                Paramount Global. In an investor presentatiol on Tuesday, the
+                company announced that its streaming service, Paramountl
+                (formerly known as CBS All Access), hit 32.8 million subscribers
+                duri…
+              </p> -->
+
+              <!-- <div class="news-menu">
+                <button class="btn btn--news btn--save">
+                  <svg>
+                    <use href="./src/img/icons.svg#icon-bookmark-outline"></use>
+                  </svg>
+                </button>
+
+                <button class="btn btn--news btn--share">
+                  <svg>
+                    <use href="./src/img/icons.svg#icon-share-social"></use>
+                  </svg>
+                </button>
+              </div> -->
+            </div>
+
+            <!-- <img
+            src="https://s.yimg.com/os/creatr-uploaded-images/2022-02/6a168e00-8ec4-11ec-bffb-5830d9cd5237"
+            alt="Alternate text" class="news-img"> -->
+          </div>
+        </div>
+        <!-- News End -->
+
+        <!-- Saved Searches Start -->
+        <div style="display: none" class="saved-searches-container">
+          <!-- <h2 class="secondary-heading">
+            <ion-icon name="search"></ion-icon> Saved Searches
+          </h2> -->
+
+          <div class="saved-search hidden">
+            <div class="news">
+              <div class="news-content">
+                <h2 class="news-title">
+                  <a href="#">Paramount+ hits 32.8 million subscribers; will offer
+                    Showtime for a fee</a>
+                </h2>
+
+                <div class="news-info">
+                  <span class="news-source">Engadget</span>
+                  <!-- This is the date that user saved the news -->
+                  <span class="news-time">Feb 22 2022</span>
+                </div>
+
+                <div class="news-menu">
+                  <button class="btn btn--news btn--save">
+                    <svg class="menu-icon">
+                      <use href="/icons.21bad73c.svg#icon-bookmark"></use>
+                    </svg>
+                  </button>
+
+                  <button class="btn btn--news btn--share">
+                    <svg class="menu-icon">
+                      <use href="/icons.21bad73c.svg#icon-share-social"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <img src="https://s.yimg.com/os/creatr-uploaded-images/2022-02/6a168e00-8ec4-11ec-bffb-5830d9cd5237" "="" alt="Alternate text" class="saved-news-img">
+            </div>
+          </div>
+
+          <!-- <p style="display: none" class="search-message">
+            <svg class="menu-icon">
+              <use href="./src/img/icons.svg#icon-newspaper"></use>
+            </svg>
+            Save news to get started...
+          </p> -->
+        </div>
+        <!-- Saved Searches End -->
+
+        <!-- Search History Starts -->
+        <!-- <div style="display: none" class="search-history-container">
+          <h2 class="secondary-heading">
+            <svg class="menu-icon">
+              <use href="./src/img/icons.svg#icon-time"></use>
+            </svg>
+          </h2>
+
+          <div style="display: none" class="search-history">
+            <p class="search-history-title">Cnn</p>
+            <p class="search-history-title">Corona</p>
+            <p class="search-history-title">Ukraine</p>
+            <p class="search-history-title">Putin</p>
+            <p class="search-history-title">Hollywood</p>
+            <p class="search-history-title">Brad Pitt</p>
+          </div>
+
+          <button style="display: none" class="btn btn-clear">Clear all</button>
+
+          <p style="display: none" class="search-message">
+            <svg class="menu-icon">
+              <use href="./src/img/icons.svg#icon-sad-face"></use>
+            </svg>
+            No search history found.
+          </p>
+        </div> -->
+        <!-- Search History Ends -->
+
+        <svg class="loading-spinner-small">
+          <use href="/loading_spinner_small.9f177705.svg#loading-spinner"></use>
+        </svg>
+      </main>
+    </div>
+
+    <!-- Share Popup -->
+    <div class="share-popup-container hidden">
+      <h3 class="tertiary-heading">Share this news on:</h3>
+
+      <button class="close">&times;</button>
+
+      <div class="share-popup-btns">
+        <button class="social-icon copy">
+          <svg>
+            <use href="/icons.21bad73c.svg#icon-link"></use>
+          </svg>
+          Copy Link
+        </button>
+        <a href="" target="_blank" class="social-icon twitter"><svg>
+            <use href="/icons.21bad73c.svg#icon-twitter"></use>
+          </svg>
+          Twitter
+        </a>
+        <a href="" target="_blank" class="social-icon whatsapp"><svg>
+            <use href="/icons.21bad73c.svg#icon-whatsapp"></use>
+          </svg>
+          Whatsapp
+        </a>
+        <a href="" target="_blank" class="social-icon telegram"><svg>
+            <use href="/icons.21bad73c.svg#icon-telegram"></use>
+          </svg>
+          Telegram
+        </a>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script>// Embedded script to load the initial layout.
+const menu = document.querySelector('.menu-container');
+const header = document.querySelector('.header');
+const container = document.querySelector('.container');
+const mainContainer = document.querySelector('.main-container');
+menu.style.position = 'fixed';
+menu.style.transform = `translateY(${getComputedStyle(header).height})`;
+menu.style.width = `${+getComputedStyle(container).width.slice(0, -2) / 3.75}px`;
+menu.style.height = '70rem';
+mainContainer.style.transform = `translateY(${getComputedStyle(header).height})`;
+header.style.width = `${getComputedStyle(container).width}`;
+
+</script>
+  </body>
+</html>
