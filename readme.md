@@ -43,11 +43,13 @@ Now you can scroll to bottom and you will get some infinite scroll animation/eff
 
 ### What can you do with the results
 
-1. You can save(or bookmark) the news results by clicking on the **bookmark icon** for reading later (I have used native localstorage API from browser to store/save the bookmarked result). You can view you saved searches by clicking the **saved searches** on the menu at left hand side of the web page.
-   <br />
-2. You can share the original link of the news with your friends or family on different social medias by clicking the **share icon**.
+1. You can click on the heading of the news to read the original news.
    <br/>
-3. You can also see for the search history for all the searches that you have searched for by clicking on the **search history** on the menu.
+2. You can save(or bookmark) the news results by clicking on the **bookmark icon** for reading later (I have used native localstorage API from browser to store/save the bookmarked result). You can view you saved searches by clicking the **saved searches** on the menu at left hand side of the web page.
+   <br />
+3. You can share the original link of the news with your friends or family on different social medias by clicking the **share icon**.
+   <br/>
+4. You can also see for the search history for all the searches that you have searched for by clicking on the **search history** on the menu.
 
 ## What have I used
 
