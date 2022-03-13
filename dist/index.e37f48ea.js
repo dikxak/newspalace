@@ -555,7 +555,6 @@ const controlNewsResults = async function() {
         // render the data to the view
         _viewJsDefault.default.render(_modelJs.getSearchResultsData());
     } catch (err) {
-        console.error(err);
         _viewJsDefault.default.renderError();
     }
 };
@@ -605,7 +604,6 @@ const controlLocalNewsResults = async function(targetElement) {
         // "render" the data to the view
         _viewJsDefault.default.render(_modelJs.getSearchResultsData(), targetElement.dataset.title, targetElement.dataset.icon);
     } catch (err) {
-        console.error(err);
         _viewJsDefault.default.renderError();
     }
 };
@@ -2509,7 +2507,6 @@ const appData = {
         }
         setLocalStorage();
     } catch (err) {
-        console.error(`💥💥 ${err}`);
         throw err;
     }
 };
@@ -2538,7 +2535,6 @@ const loadCategoryResults = async function(category, icon) {
         appData.newsResults = newsData.articles;
         setLocalStorage();
     } catch (err) {
-        console.error(`💥💥 ${err}`);
         throw err;
     }
 };
@@ -2568,8 +2564,6 @@ const getSearchResultsData = function(page = appData.search.pageNum) {
 const getSearchResultsDataBookmark = function() {
     const startIndex = 0;
     const endIndex = _configJs.RESULTS_PER_PAGE * appData.search.pageNum;
-    console.log(appData.search.pageNum);
-    console.log(startIndex, endIndex);
     checkIsBookmarked();
     return appData.newsResults.slice(startIndex, endIndex);
 };
