@@ -23,7 +23,7 @@ I have developed this web application using third party API (i.e. [NewsAPI](http
 3. Start the localhost
    `npm start`
 
-After these two process, **parcel** (I have used parcel as module bundler) will start the localhost on port 1234 ([localhost](http://localhost:1234)) and you should be able to see the initial layout of the page.
+After these three process, **parcel** (I have used parcel as module bundler) will start the localhost on port 1234 ([localhost](http://localhost:1234)) and you should be able to see the initial layout of the page.
 
 ## How to use
 
