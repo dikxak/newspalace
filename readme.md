@@ -25,6 +25,8 @@ I have developed this web application using third party API (i.e. [NewsAPI](http
 
 After these three process, **parcel** (I have used parcel as module bundler) will start the localhost on port 1234 ([localhost](http://localhost:1234)) and you should be able to see the initial layout of the page.
 
+<mark>If the layout is too big for your screen, try decreasing the zoom level on the browser 😀</mark>
+
 ## How to use
 
 After you have started the localhost server you should see initial layout as:
