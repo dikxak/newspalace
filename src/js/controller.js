@@ -30,7 +30,7 @@ const controlNewsResults = async function () {
   try {
     const query = newsSearchView.getQuery();
 
-    if (!query) return;
+    if (!query) return view.renderError();
 
     model.saveHistory(query);
 
