@@ -548,7 +548,7 @@ const controlNewsResults = async function() {
     _viewJsDefault.default.renderSpinner();
     try {
         const query = _newsSearchViewJsDefault.default.getQuery();
-        if (!query) return;
+        if (!query) return _viewJsDefault.default.renderError();
         _modelJs.saveHistory(query);
         // await until the data is loaded.
         await _modelJs.loadNewsResults(query);
@@ -2393,13 +2393,11 @@ parcelHelpers.export(exports, "SEARCH_HEADING", ()=>SEARCH_HEADING
 );
 parcelHelpers.export(exports, "SEARCH_ICON", ()=>SEARCH_ICON
 );
-const API_KEY = 'b9796ac0a2404b8d8407e5972c861857';
+const API_KEY = '< YOUR API KEY HERE >';
 const TIMEOUT_SEC = 10;
 const RESULTS_PER_PAGE = 10;
 const SEARCH_HEADING = 'stories';
 const SEARCH_ICON = 'icon-earth';
-// KEY-1 => 357dffae768847649c703b90457b302a
-// KEY-2 => b9796ac0a2404b8d8407e5972c861857
 // fetching news data for domains (e.g. cnn.com, bbc.com, techcrunch.com)
 const URL_DOMAIN = function(query) {
     return `https://newsapi.org/v2/everything?domains=${query}.com&language=en&sortBy=publishedAt&pageSize=100&apiKey=${API_KEY}`;

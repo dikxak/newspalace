@@ -10,6 +10,20 @@ Adding to the features, you can save (or bookmark) the news for viewing later. A
 
 You can click on the heading of the displayed news and it will let into the original website where news was posted initially.
 
+## Beforing starting the project and using it
+
+You need to set up your API Key before using the project.
+
+### Steps to set up API Key
+
+1. Visit [NewsAPI](https://newsapi.org/) website.
+
+2. Create account and get API Key.
+
+3. Under `src/js` folder, you will get `config.js` file.
+
+4. Just replace your API key with `const API_KEY` variable value. (i.e. replace '< YOUR API KEY HERE >' text with your API key).
+
 ## How to install
 
 I have developed this web application using third party API (i.e. [NewsAPI](https://newsapi.org/)) so, I am unable to preview it after publishing it to the online. NewsAPI have restricted the use of API on actual website and is only able to perform on localhost. Therefore, you must install it on your local workspace before running it.

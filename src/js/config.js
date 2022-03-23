@@ -1,11 +1,8 @@
-const API_KEY = 'b9796ac0a2404b8d8407e5972c861857';
+const API_KEY = '< YOUR API KEY HERE >';
 const TIMEOUT_SEC = 10;
 const RESULTS_PER_PAGE = 10;
 const SEARCH_HEADING = 'stories';
 const SEARCH_ICON = 'icon-earth';
-
-// KEY-1 => 357dffae768847649c703b90457b302a
-// KEY-2 => b9796ac0a2404b8d8407e5972c861857
 
 // fetching news data for domains (e.g. cnn.com, bbc.com, techcrunch.com)
 const URL_DOMAIN = function (query) {
